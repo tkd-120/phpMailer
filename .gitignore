@@ -1,21 +1,3 @@
-# Node.js
-node_modules/
-npm-debug.log
-yarn-error.log
-
-# Python
-__pycache__/
-*.py[cod]
-.python-version
-
-# IDE files
-.vscode/
-.idea/
-
-# OS files
-.DS_Store
-Thumbs.db
-
 # env
 .env
 .env.*

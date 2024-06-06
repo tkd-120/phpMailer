@@ -60,9 +60,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->AltBody = "新しいお問い合わせがあります。以下の内容をご確認ください。\n\n---\n名前: $name\nメールアドレス: $email\n本文: $message\n---";
         $mail->send();
 
-        echo 'メッセージが送信されました';
+        $out = "メッセージが送信されました。";
+        echo "<script type=\"text/javascript\">console.log(\"{$out}\");</script>";
+        echo "<p>$out</p>";
+        echo "<a href='index.php'>戻る</a>";
     } catch (Exception $e) {
-        echo "メッセージを送信できませんでした。エラー: {$mail->ErrorInfo}";
+        $error = "メッセージを送信できませんでした。エラー: {$mail->ErrorInfo}";
+        echo "<script type=\"text/javascript\">console.log(\"{$error}\");</script>";
+        echo "<p>$error</p>";
+        echo "<a href='index.php'>戻る</a>";
     }
 }
 ?>
